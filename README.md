@@ -41,6 +41,7 @@ Manipulate data. Split code into modules. Reflect on end result
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
 <!-- ☝️ replace this description with a description of your own work -->
+## This webapp allows you to navigate throuh a collection of cocktails by submitting an ingredient, the webapp then displays a collection of cocktails including said ingredient.
 
 <!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
 
