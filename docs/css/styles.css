@@ -1,7 +1,5 @@
-:root {
-  --dark: #000;
-  --course: #00B0FC;
-  --light: #fff;
+body{
+  font-family:tahoma;
 }
 
 #test img{
@@ -17,4 +15,10 @@
 #test article{
   width: 30%;
   text-align:center;
+  color: white;
+    width: 30%;
+    text-align: center;
+    margin: 1.6%;
+    background: lightslategray;
+    border-radius: 5px;
 }

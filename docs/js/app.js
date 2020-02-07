@@ -8,14 +8,13 @@ function showIngredients() {
     })
     .then(function(myJson) {
       const data = myJson.drinks
-      console.log(data[0])
+      console.log(data)
       document.getElementById("description").innerHTML = data[0].strInstructions;
     });
 }
 
 function searchByInput() {
   var userInput = document.getElementById("ingredient").value;
-
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${userInput}`)
     .then(function(response) {
       return response.json();
