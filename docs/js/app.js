@@ -1,5 +1,6 @@
-let button = document.getElementById("submitButton");
-button.addEventListener("click", searchByInput);
+//import handler from '../modules/router.js';
+
+//handler()
 
 function showIngredients() {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.textContent}`)
@@ -14,6 +15,8 @@ function showIngredients() {
 }
 
 function searchByInput() {
+  console.log("okpfagawg")
+
   var userInput = document.getElementById("ingredient").value;
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${userInput}`)
     .then(function(response) {
@@ -25,9 +28,9 @@ function searchByInput() {
       root.innerHTML = "";
       console.log(data)
       data.forEach(data => {
-        root.insertAdjacentHTML("afterbegin", '<article id="searchResults"><h2 id="drinkName">' + data.strDrink + '</h2><img src="' + data.strDrinkThumb + '"></article>');
-        let drinkName = document.getElementById("drinkName");
-        drinkName.addEventListener("click", showIngredients)
+        root.insertAdjacentHTML("afterbegin", '<article id="searchResults"><h2 id="drinkDetail">' + data.strDrink + '</h2><img src="' + data.strDrinkThumb + '"></article>');
+        let drinkDetail = document.getElementById("drinkDetail");
+        drinkDetail.addEventListener("click", showIngredients)
       })
     });
 }
