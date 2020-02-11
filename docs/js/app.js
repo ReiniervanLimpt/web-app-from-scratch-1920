@@ -1,40 +1,56 @@
-//import handler from '../modules/router.js';
+import handler from '../modules/router.js';
 
-//handler()
+(function() {
+  'use strict'
 
-function showIngredients() {
-  fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.textContent}`)
+  const app = {
+    init: function() {
+      handler()
+    }
+  }
+  app.init()
+})()
+
+const findCocktail = document.querySelector('button');
+findCocktail.addEventListener('click', requestCocktails);
+
+
+// Later opbreken in API module
+
+function requestCocktails() {
+
+  const url = "https://www.thecocktaildb.com/api/json/v1/"
+  const userInput = document.getElementById("ingredient").value;
+  const apiKey = "1";
+
+  fetch(`${url}${apiKey}/filter.php?i=${userInput}`)
     .then(function(response) {
       return response.json();
     })
     .then(function(myJson) {
-      const data = myJson.drinks
-      console.log(data)
-      document.getElementById("description").innerHTML = data[0].strInstructions;
+      renderOverview(myJson);
     });
 }
 
-function searchByInput() {
-  console.log("okpfagawg")
-
-  var userInput = document.getElementById("ingredient").value;
-  fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${userInput}`)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(myJson) {
-      const root = document.getElementById("test");
-      const data = myJson.drinks
-      root.innerHTML = "";
-      console.log(data)
-      data.forEach(data => {
-        root.insertAdjacentHTML("afterbegin", '<article id="searchResults"><h2 id="drinkDetail">' + data.strDrink + '</h2><img src="' + data.strDrinkThumb + '"></article>');
-        let drinkDetail = document.getElementById("drinkDetail");
-        drinkDetail.addEventListener("click", showIngredients)
-      })
-    });
+function requestDetail() {
+  console.log("link werkt")
 }
 
-// .then((resultData) => {
-//  document.getElementById("test").innerHTML = myJson.drinks[Math.floor(Math.random() * 10)].strDrink;
-//});
+// later opbreken in API module
+
+
+
+// later opbreken in Render module
+
+function renderOverview(cocktailsOverview) {
+  const root = document.getElementById("overview");
+  const data = cocktailsOverview.drinks;
+  root.innerHTML = "";
+  data.forEach(data => {
+    root.insertAdjacentHTML("beforeend", '<article id="searchResults"><a href=#detail id="drinkDetail">' + data.strDrink + '</a><img src="' + data.strDrinkThumb + '"></article>');
+  })
+}
+
+// later opbreken in Render module
+
+export default requestDetail;

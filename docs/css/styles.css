@@ -2,17 +2,17 @@ body{
   font-family:tahoma;
 }
 
-#test img{
+#overview img{
   width: 20%;
 }
 
 
-#test{
+#overview{
   display: flex;
   flex-wrap: wrap;
 }
 
-#test article{
+#overview article{
   width: 30%;
   text-align:center;
   color: white;

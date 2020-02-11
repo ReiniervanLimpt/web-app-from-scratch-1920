@@ -1,10 +1,12 @@
+import requestDetail from '../js/app.js';
+
 function handler() {
   routie({
     '': function() {
-      console.log("nice")
+      console.log("routing active")
     },
-    'overview': function() {
-
+    'detail': function() {
+      console.log("detail")
     },
     '/:id': function(id) {
 
