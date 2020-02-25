@@ -1,15 +1,15 @@
-import requestDetail from '../js/app.js';
+import data from '../modules/data.js';
 
 function handler() {
   routie({
     '': function() {
-      console.log("routing active")
+      console.log("routing werkt")
     },
-    'detail': function() {
-      console.log("detail")
+    'drink/:id': function(id) {
+      data.getDetail(id)
     },
-    '/:id': function(id) {
-
+    'overview': function() {
+      data.getCocktails()
     }
   });
 }
