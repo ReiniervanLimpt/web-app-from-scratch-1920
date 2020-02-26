@@ -15,8 +15,6 @@ const api = {
       })
       .then(function(myJson) {
         data.storeCocktails(myJson)
-        console.log(myJson)
-        render.renderOverview(myJson)
       });
   },
 
@@ -31,7 +29,7 @@ const api = {
         return response.json();
       })
       .then(function(myJson) {
-        data.storeDetail(data.cleanUpDetail(myJson))
+        data.storeDetail(myJson.drinks[0])
       });
   }
 }

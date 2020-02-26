@@ -1,17 +1,16 @@
 const render = {
   renderOverview: function(cocktailsOverview) {
-    const overview = document.getElementById("overview");
-    const data = cocktailsOverview.drinks;
+    const overview = document.getElementById("overviewSection");
     overview.innerHTML = "";
-    data.forEach(data => {
+    cocktailsOverview.forEach(cocktailsOverview => {
       const html = '<article id="searchResults"><a href=#drink/:' +
-        data.idDrink +
+        cocktailsOverview.idDrink +
         ' id="' +
-        data.idDrink +
+        cocktailsOverview.idDrink +
         '">' +
-        data.strDrink +
+        cocktailsOverview.strDrink +
         '</a><img src="' +
-        data.strDrinkThumb +
+        cocktailsOverview.strDrinkThumb +
         '"></article>';
       overview.insertAdjacentHTML("beforeend", html);
     })
@@ -20,7 +19,6 @@ const render = {
   renderDetail: function(cocktailDetail) {
     const detail = document.getElementById("detail");
     const data = cocktailDetail;
-
     detail.innerHTML = "";
     data.forEach(data => {
       const html = '<article id="searchResults"><a href=#drink/:' +

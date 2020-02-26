@@ -2,23 +2,27 @@ body{
   font-family:tahoma;
 }
 
-#overview img{
-  width: 20%;
+#overviewSection img{
+  width: 100%;
 }
 
 
-#overview{
+#overviewSection{
   display: flex;
   flex-wrap: wrap;
 }
 
-#overview article{
+#overviewSection article{
   width: 30%;
   text-align:center;
   color: white;
-    width: 30%;
+    width: 24%;
     text-align: center;
-    margin: 1.6%;
+    margin: 0.5%;
     background: lightslategray;
     border-radius: 5px;
+}
+
+#cocktailFinder{
+  display: flex;
 }

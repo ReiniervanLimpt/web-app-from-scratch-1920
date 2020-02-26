@@ -10,6 +10,9 @@ function handler() {
     },
     'overview': function() {
       data.getCocktails()
+    },
+    '*': function() {
+      console.log('404')
     }
   });
 }
