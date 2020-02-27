@@ -25,7 +25,7 @@ Clone this repository:
 
 ## app.js 
 > Primary function: `app.init()`
-```javascript
+> ```javascript
 const app = {
     init: function() {
       handler()
@@ -33,6 +33,7 @@ const app = {
   }
   app.init()
   ```
+> starts the routie module which checks what hash is requested
 
 *
 *
