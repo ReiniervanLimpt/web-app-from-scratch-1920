@@ -33,7 +33,7 @@ const app = {
   }
   app.init()
 ```
-> starts the routie module which checks what hash is requested
+ starts the routie module which checks what hash is requested
 
 ## router.js
 > Primary function: `updatePage(route)`
@@ -49,4 +49,70 @@ const app = {
   }
 }
 ```
-> hides and displays sections of the page based on the requested route
+ hides and displays sections of the page based on the requested route
+ 
+ ## data.js :star2: :star2: :star2: 
+> Primary function: `storeCocktails(myJson)`
+ ```javascript
+  storeCocktails: function(myJson) {
+    const userInput = document.getElementById("ingredient").value;
+    const requestedCocktails = myJson.drinks;
+
+    const promises = requestedCocktails.map(cocktail => {
+      const correctedId = cocktail.idDrink
+
+      return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${correctedId}`)
+        .then(response => response.json())
+        .then(myData => myData.drinks[0])
+    })
+
+    Promise.all(promises).then(myData => {
+      localStorage.setItem("'" + userInput + "'", JSON.stringify(myData));
+      data.filterOverview(myData);
+    })
+  },
+```
+The data fetched by the requested ingredient did not lend itself to being filtered, the data in the array only had a name and and ID, the API can retrieve more data on the cocktails by doing another api call based on their ID's! with some help of Kris we managed to request a new array of cocktails (which are all objects) by mapping through the original array's idDrink values. with way more properties which i use to filter by drink type. in `filterOverview(data)`
+
+ ## render.js
+ > Primary function: `overview() / detail()`
+ ```javascript
+  overview: function(cocktailsOverview) {
+    const overview = document.getElementById("cocktails");
+    overview.innerHTML = "";
+    cocktailsOverview.forEach(cocktailsOverview => {
+      const html = '<article id="searchResults" data-route="overview"><a href=#drink/:' +
+        cocktailsOverview.idDrink +
+        ' id="' +
+        cocktailsOverview.idDrink +
+        '">' +
+        cocktailsOverview.strDrink +
+        '</a><img src="' +
+        cocktailsOverview.strDrinkThumb +
+        '"></article>';
+      overview.insertAdjacentHTML("beforeend", html);
+    })
+  }
+```
+pushes HTML for each cocktail object into a section siaplying its thumbnail and title.
+
+## api.js 
+> Primary function: `fetchCocktails()`
+ ```javascript
+  fetchCocktails: function() {
+
+    const url = "https://www.thecocktaildb.com/api/json/v1/";
+    const userInput = document.getElementById("ingredient").value;
+    const apiKey = "1";
+    console.log(userInput)
+
+    fetch(`${url}${apiKey}/filter.php?i=${userInput}`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(myJson) {
+        data.storeCocktails(myJson)
+      })
+  }
+```
+ this function fetches the data from the api based on the users input.
