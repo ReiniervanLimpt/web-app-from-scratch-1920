@@ -1,8 +1,9 @@
 # Web App From Scratch @cmda-minor-web 1819
 
 
-## My cocktail webapp!!
+## My cocktail webapp!! :cocktail:
 
+used database: 🌐 https://www.thecocktaildb.com/
 * 
 * 
 * 
@@ -14,5 +15,6 @@
 
 ### Interaction diagram
 ![Interaction Diagram](https://user-images.githubusercontent.com/36195440/75466304-48cd6280-598a-11ea-9de7-0a932d576469.png)
-<!-- Add a link to your live demo in Github Pages 🌐-->
+<!-- Add a link to your live demo in Github Pages -->
 
+:hash:
