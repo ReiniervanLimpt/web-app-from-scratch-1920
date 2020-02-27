@@ -2,17 +2,15 @@ body{
   font-family:tahoma;
 }
 
-#overviewSection img{
+#cocktails img{
   width: 100%;
 }
 
-
-#overviewSection{
-  display: flex;
-  flex-wrap: wrap;
+#cocktailDetail img{
+  width: 100%;
 }
 
-#overviewSection article{
+#cocktails article{
   width: 30%;
   text-align:center;
   color: white;
@@ -25,4 +23,36 @@ body{
 
 #cocktailFinder{
   display: flex;
+}
+
+#cocktailDetail{
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0;
+  z-index: -1;
+}
+
+#cocktails{
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0;
+  z-index: -1;
+}
+
+#cocktailDetail #detailResults{
+  width:50%
+}
+
+section[data-route="overview"]{
+  position: absolute;
+}
+
+section[data-route="detail"]{
+  position: absolute;
+}
+
+.active {
+  opacity: 1 !important;
+  z-index: 1 !important;
 }
