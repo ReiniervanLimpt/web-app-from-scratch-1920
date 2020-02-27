@@ -3,6 +3,8 @@
 
 ### My cocktail webapp!! :cocktail:
 
+![cocktails](https://user-images.githubusercontent.com/36195440/75471052-f001c800-5991-11ea-9e83-7a8023ae2206.png)
+
 used database: 🌐 https://www.thecocktaildb.com/ (no rate limit!!!)
 
 My webapp allows users to search for cocktails based on ingredient ie. lemon(shows the most results), orange, lime etc in combination with a selection of alcoholic drinks which serve as a filter through a big array of cocktails!
