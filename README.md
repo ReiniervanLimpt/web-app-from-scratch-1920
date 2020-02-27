@@ -24,19 +24,29 @@ Clone this repository:
 ### Modules and their main functionality
 
 ## app.js 
-> Primary function: `app.init()`
-> ```javascript
+> Primary function: `init()`
+ ```javascript
 const app = {
     init: function() {
       handler()
     }
   }
   app.init()
-  ```
+```
 > starts the routie module which checks what hash is requested
 
-*
-*
-*
-* 
-
+## router.js
+> Primary function: `updatePage(route)`
+ ```javascript
+  function updatePage(route) {
+    const sections = document.querySelectorAll('section')
+    sections.forEach(section => {
+      section.classList.remove('active')
+    })
+    const activeSection = document.querySelector(`[data-route="${route}"]`)
+    console.log(activeSection)
+    activeSection.classList.add('active')
+  }
+}
+```
+> hides and displays sections of the page based on the requested route
