@@ -4,10 +4,15 @@
 ## My cocktail webapp!! :cocktail:
 
 used database: 🌐 https://www.thecocktaildb.com/
+
+My webapp allows users to search for cocktails based on ingredient ie. :lemon: lemon(shows the most results), :orange: orange, :lime: lime, :apple: apples etc in combination with a selection of alcoholic drinks which serve as a filter through a big array of cocktails!
+
+
 * 
 * 
 * 
 * 
+
 ## Program
 
 ### Actor diagram
