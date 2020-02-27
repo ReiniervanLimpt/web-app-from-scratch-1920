@@ -3,7 +3,7 @@
 
 ### My cocktail webapp!! :cocktail:
 
-used database: 🌐 https://www.thecocktaildb.com/
+used database: 🌐 https://www.thecocktaildb.com/ (no rate limit!!!)
 
 My webapp allows users to search for cocktails based on ingredient ie. lemon(shows the most results), orange, lime etc in combination with a selection of alcoholic drinks which serve as a filter through a big array of cocktails!
 
