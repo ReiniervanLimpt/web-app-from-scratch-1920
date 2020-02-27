@@ -21,9 +21,18 @@ Clone this repository:
 ![Interaction Diagram](https://user-images.githubusercontent.com/36195440/75466304-48cd6280-598a-11ea-9de7-0a932d576469.png)
 <!-- Add a link to your live demo in Github Pages -->
 
-## Modules and their main functionality
+### Modules and their main functionality
 
-* app.js 
+## app.js 
+> Primary function: `app.init()`
+
+> `  const app = {
+    init: function() {
+      handler()
+    }
+  }
+  app.init()`
+
 *
 *
 *
