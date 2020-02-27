@@ -25,13 +25,14 @@ Clone this repository:
 
 ## app.js 
 > Primary function: `app.init()`
-
-> `  const app = {
+```javascript
+const app = {
     init: function() {
       handler()
     }
   }
-  app.init()`
+  app.init()
+  ```
 
 *
 *
