@@ -10,7 +10,7 @@ My webapp allows users to search for cocktails based on ingredient ie. :lemon: l
 ## Install:
 Clone this repository:
 
-
+`git clone https://github.com/ReiniervanLimpt/web-app-from-scratch-1920.git`
 
 ### Actor diagram
 ![actor Diagram 2](https://user-images.githubusercontent.com/36195440/75466298-47039f00-598a-11ea-8dd1-7fbd452cbdbc.png)
