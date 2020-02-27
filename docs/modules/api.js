@@ -15,7 +15,10 @@ const api = {
       })
       .then(function(myJson) {
         data.storeCocktails(myJson)
-      });
+      })
+    //.catch((error) => {
+    //  alert("ER IS NIKS!!")
+    //});
   },
 
   fetchDetail: function(id) {

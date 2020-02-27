@@ -1,9 +1,9 @@
 const render = {
-  renderOverview: function(cocktailsOverview) {
-    const overview = document.getElementById("overviewSection");
+  overview: function(cocktailsOverview) {
+    const overview = document.getElementById("cocktails");
     overview.innerHTML = "";
     cocktailsOverview.forEach(cocktailsOverview => {
-      const html = '<article id="searchResults"><a href=#drink/:' +
+      const html = '<article id="searchResults" data-route="overview"><a href=#drink/:' +
         cocktailsOverview.idDrink +
         ' id="' +
         cocktailsOverview.idDrink +
@@ -16,22 +16,21 @@ const render = {
     })
   },
 
-  renderDetail: function(cocktailDetail) {
-    const detail = document.getElementById("detail");
+  detail: function(cocktailDetail) {
+    const detail = document.getElementById("cocktailDetail");
     const data = cocktailDetail;
+    console.log(cocktailDetail)
     detail.innerHTML = "";
-    data.forEach(data => {
-      const html = '<article id="searchResults"><a href=#drink/:' +
-        data.idDrink +
-        ' id="' +
-        data.idDrink +
-        '">' +
-        data.strDrink +
-        '</a><img src="' +
-        data.strDrinkThumb +
-        '"></article>';
-      detail.insertAdjacentHTML("beforeend", html);
-    })
+    const html = '<article id="detailResults" data-route="detail"><a href=#drink/:' +
+      data.idDrink +
+      ' id="' +
+      data.idDrink +
+      '">' +
+      data.strDrink +
+      '</a><img src="' +
+      data.strDrinkThumb +
+      '"></article>';
+    detail.insertAdjacentHTML("beforeend", html);
   }
 }
 

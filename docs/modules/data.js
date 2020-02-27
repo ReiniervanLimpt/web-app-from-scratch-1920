@@ -10,8 +10,8 @@ const data = {
       api.fetchCocktails()
     } else {
       console.log("overview exists in local storage")
-      const dataJson = JSON.parse(localStorage.getItem("'" + userInput + "'"))
-      data.filterOverview(dataJson);
+      const retrievedData = JSON.parse(localStorage.getItem("'" + userInput + "'"))
+      data.filterOverview(retrievedData);
     }
   },
 
@@ -21,6 +21,9 @@ const data = {
       api.fetchDetail(id)
     } else {
       console.log("detail exists in local storage")
+      const retrievedData = JSON.parse(localStorage.getItem("'" + id.substr(1) + "'"))
+      console.log(retrievedData)
+      render.detail(retrievedData)
     }
   },
 
@@ -42,6 +45,7 @@ const data = {
       data.filterOverview(myData);
     })
   },
+  // made by Kris
 
   filterOverview: function(data) {
     const userInput = document.getElementById("ingredient").value;
@@ -62,8 +66,8 @@ const data = {
             cocktails.strIngredient8 == checkbox.value;
         });
         console.log(filteredCocktails)
-        render.renderOverview(filteredCocktails)
-      } else {
+        render.overview(filteredCocktails)
+      } else if (checkbox.checked == false) {
 
       }
     });
@@ -72,6 +76,7 @@ const data = {
 
   storeDetail: function(data) {
     localStorage.setItem(`'${data.idDrink}'`, JSON.stringify(data));
+    render.detail(data)
   }
 
 }

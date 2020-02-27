@@ -17,24 +17,24 @@
   </header>
   <main>
 
-    <div id="cocktailFinder">
+    <section id="cocktailFinder">
       <label for="ingredient">Ingredient</label>
-      <input type="text" name="ingredient" id="ingredient" value="ingredient" />
-      <input type="radio" name="drink" value="Gin">
+      <input type="text" name="ingredient" id="ingredient" value="lemon" />
+      <input type="radio" name="drink" value="Gin" checked="checked">
       <label for="Gin">Gin</label><br>
-      <input type="radio" name="drink" value="Vodka">
-      <label for="Vodka">Vodka</label><br>
+      <input type="radio" name="drink" value="Light rum">
+      <label for="Light rum">Light rum</label><br>
       <input type="radio" name="drink" value="Amaretto">
       <label for="Amaretto">Amaretto</label>
       <input type="radio" name="drink" value="Brandy">
       <label for="Brandy">Brandy</label>
 
       <a href="#overview">Vind cocktails</a>
-    </div>
+    </section>
 
-    <div id="overviewSection"></div>
+    <section id="cocktails" data-route="overview"></section>
 
-    <div id="detail"></div>
+    <section id="cocktailDetail" data-route="detail"></section>
 
     <footer>
 
