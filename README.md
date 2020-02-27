@@ -1,7 +1,7 @@
 # Web App From Scratch @cmda-minor-web 1819
 
 
-## Learning goals
+## My cocktail webapp!!
 
 * 
 * 
