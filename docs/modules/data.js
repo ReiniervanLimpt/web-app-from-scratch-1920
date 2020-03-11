@@ -65,10 +65,12 @@ const data = {
             cocktails.strIngredient7 == checkbox.value ||
             cocktails.strIngredient8 == checkbox.value;
         });
-        console.log(filteredCocktails)
-        render.overview(filteredCocktails)
-      } else if (checkbox.checked == false) {
 
+        if (filteredCocktails.length == 0) {
+          alert(`geen cocktails gevonden met ${userInput} en geselecteerde drank`)
+        } else {
+          render.overview(filteredCocktails)
+        }
       }
     });
   },
@@ -78,7 +80,6 @@ const data = {
     localStorage.setItem(`'${data.idDrink}'`, JSON.stringify(data));
     render.detail(data)
   }
-
 }
 
 export default data;

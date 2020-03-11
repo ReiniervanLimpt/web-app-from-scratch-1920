@@ -29,8 +29,25 @@ const render = {
       data.strDrink +
       '</a><img src="' +
       data.strDrinkThumb +
-      '"></article>';
+      '">' + data.strInstructions + '</article>';
     detail.insertAdjacentHTML("beforeend", html);
+  },
+
+  loader: function() {
+    const cocktailsContainer = document.getElementById('cocktails')
+    cocktailsContainer.innerHTML = ''
+
+    console.log('loading data')
+    const html = `
+    <div id="loader">
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+    </div>`
+    cocktailsContainer.insertAdjacentHTML('beforeend', html)
   }
 }
 

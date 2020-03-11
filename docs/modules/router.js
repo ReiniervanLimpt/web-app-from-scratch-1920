@@ -1,4 +1,5 @@
 import data from '../modules/data.js';
+import render from '../modules/render.js'
 
 function handler() {
   routie({
@@ -6,12 +7,14 @@ function handler() {
       console.log("routing werkt")
     },
     'drink/:id': function(id) {
-      data.getDetail(id)
       updatePage("detail")
+      render.loader()
+      data.getDetail(id)
     },
     'overview': function() {
-      data.getCocktails()
       updatePage("overview")
+      render.loader()
+      data.getCocktails()
     },
     '*': function() {
       console.log('404')
